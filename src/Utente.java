@@ -3,6 +3,7 @@ public class Utente {
     //Attributi
 
     private String nome, cognome, email, indirizzo;
+    private int idUtente;
 
     //Costruttore
     public Utente(String nome, String cognome, String email, String indirizzo) {
@@ -10,6 +11,8 @@ public class Utente {
         this.cognome = cognome;
         this.email = email;
         this.indirizzo = indirizzo;
+        this.idUtente = Utility.getIncrementUtente();
+
     }
 
     //Getter e Setter
@@ -45,4 +48,20 @@ public class Utente {
     public void setIndirizzo(String indirizzo) {
         this.indirizzo = indirizzo;
     }
+
+    public int getIdUtente() {
+        return idUtente;
+    }
+
+    //metodi
+    public void daiFeedback(Feedback feedback, Host host){
+        host.getListaFeedback().add(feedback);
+    }
+
+    public void faiPrenotazione(Prenotazione prenotazione, Gestore gestore){
+        prenotazione.getAbitazione().getListaPrenotazioni().add(prenotazione);
+        gestore.addPrenotazione(prenotazione);
+        prenotazione.getAbitazione().getHost().getIncrementNumPrenotazioni();
+    }
+
 }

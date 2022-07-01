@@ -2,7 +2,7 @@ public class Utility {
 
     //attributi
 
-    private static int incrementoCodiceHost = -1, incrementoIdAbitazione = -1, incrementoIdPrenotazione = -1 , incrementoIdFeedback = -1;
+    private static int incrementoCodiceHost = -1, incrementoIdAbitazione = -1, incrementoIdPrenotazione = -1 , incrementoIdFeedback = -1 , incrementoIdUtente = -1;
 
     public static int getIncrementHost() {
         incrementoCodiceHost++;
@@ -23,6 +23,13 @@ public class Utility {
     public static int getIncrementFeedback() {
         incrementoIdFeedback++;
         return incrementoIdFeedback;
-
     }
+
+    public static int getIncrementUtente() {
+        incrementoIdUtente++;
+        return incrementoIdUtente;
+    }
+
+
+
 }

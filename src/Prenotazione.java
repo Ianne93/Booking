@@ -17,4 +17,36 @@ public class Prenotazione {
         this.abitazione = abitazione;
         this.utente = utente;
     }
+
+    //Getter e Setter
+
+    public int getIdPrenotazione() {
+        return idPrenotazione;
+    }
+
+
+    public LocalDateTime getDataInizio() {
+        return dataInizio;
+    }
+
+    public void setDataInizio(LocalDateTime dataInizio) {
+        this.dataInizio = dataInizio;
+    }
+
+    public LocalDateTime getDataFine() {
+        return dataFine;
+    }
+
+    public void setDataFine(LocalDateTime dataFine) {
+        this.dataFine = dataFine;
+    }
+
+    public Abitazione getAbitazione() {
+        return abitazione;
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
 }

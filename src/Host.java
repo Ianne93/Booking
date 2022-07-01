@@ -9,16 +9,18 @@ public class Host extends Utente {
     private int nrPrenotazione;
     private ArrayList<Feedback> listaFeedback;
 
+    private int countPrenotazioneMensile;
+
     //Costruttore
     public Host(String nome, String cognome, String email, String indirizzo) {
         super(nome, cognome, email, indirizzo);
         this.codiceHost = Utility.getIncrementHost();
         listaAbitazione = new ArrayList<>();
         listaFeedback = new ArrayList<>();
+        this.countPrenotazioneMensile = 0;
     }
 
     //Getter e Setter
-
 
     public int getCodiceHost() {
         return codiceHost;
@@ -46,6 +48,22 @@ public class Host extends Utente {
 
     public ArrayList<Feedback> getListaFeedback() {
         return listaFeedback;
+    }
+
+    public int getCountPrenotazioneMensile() {
+        return countPrenotazioneMensile;
+    }
+
+    //metodi
+    public void getIncrementNumPrenotazioni() {
+        nrPrenotazione++;
+        if (nrPrenotazione == 100) {
+            superHost = true;
+        }
+    }
+    public void addAbitazione(Abitazione abitazione, Gestore gestore){
+        listaAbitazione.add(abitazione);
+        gestore.addAbitazione(abitazione);
     }
 
 }
