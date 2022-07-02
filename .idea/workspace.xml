@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1de50120-61d5-49cb-9e32-4a5165734324" name="Changes" comment="Commit 01/07/22 - mattina - Creato attributi,costruttori">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="1de50120-61d5-49cb-9e32-4a5165734324" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Abitazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abitazione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Feedback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Host.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prenotazione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +40,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -69,14 +69,6 @@
       <option name="presentableId" value="Default" />
       <updated>1656670158312</updated>
     </task>
-    <task id="LOCAL-00001" summary="Commit 01/07/22 - mattina - Creato attributi,costruttori">
-      <created>1656673127813</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1656673127813</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,9 +81,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 01/07/22 - mattina - Creato attributi,costruttori" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 01/07/22 - mattina - Creato attributi,costruttori" />
   </component>
 </project>

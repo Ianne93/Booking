@@ -63,7 +63,29 @@ public class Host extends Utente {
     }
     public void addAbitazione(Abitazione abitazione, Gestore gestore){
         listaAbitazione.add(abitazione);
+        abitazione.setHost(this);
         gestore.addAbitazione(abitazione);
     }
 
+    private String printLista(ArrayList<?> lista)
+    {
+        String s = "";
+        for (int i = 0; i < lista.size();i++)
+        {
+            s += lista.get(i) + "\n";
+        }
+
+    return s;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Host{" +
+                "codiceHost=" + codiceHost +
+                ", superHost=" + superHost +
+                ", listaAbitazione=" + printLista(listaAbitazione) +
+                ", listaFeedback=" + printLista(listaFeedback) +
+                '}';
+    }
 }

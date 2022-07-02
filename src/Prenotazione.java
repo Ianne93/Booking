@@ -49,4 +49,14 @@ public class Prenotazione {
         return utente;
     }
 
+    @Override
+    public String toString() {
+        return "Prenotazione{" +
+                "ID : " + idPrenotazione + '\''+
+                ", dataInizio=" + dataInizio +
+                ", dataFine=" + dataFine +
+                ", abitazione=" + abitazione.getNome() +
+                ", utente=" + utente.getNome() +
+                '}';
+    }
 }

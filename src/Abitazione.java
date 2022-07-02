@@ -16,7 +16,7 @@ public class Abitazione {
 
     //costruttore
 
-    public Abitazione(double prezzo, LocalDateTime dataInzio, LocalDateTime dataFine, String nome, String indirizzo, int nrLocali, int nrPostiLetto, int nrPiano, Host host) {
+    public Abitazione(double prezzo, LocalDateTime dataInzio, LocalDateTime dataFine, String nome, String indirizzo, int nrLocali, int nrPostiLetto, int nrPiano) {
         this.prezzo = prezzo;
         this.dataInzio = dataInzio;
         this.dataFine = dataFine;
@@ -26,11 +26,14 @@ public class Abitazione {
         this.nrLocali = nrLocali;
         this.nrPostiLetto = nrPostiLetto;
         this.nrPiano = nrPiano;
-        this.host = host;
         this.listaPrenotazioni = new ArrayList<>();
     }
 
     //Getter e Setter
+
+    public void setHost(Host host) {
+        this.host = host;
+    }
 
     public double getPrezzo() {
         return prezzo;
@@ -92,4 +95,15 @@ public class Abitazione {
         return listaPrenotazioni;
     }
 
+    @Override
+    public String toString() {
+        return "Abitazione{" +
+                "dataInzio=" + dataInzio +
+                ", dataFine=" + dataFine +
+                ", nome='" + nome + '\'' +
+               // ", idAbitazione=" + idAbitazione +
+                ", nrPostiLetto=" + nrPostiLetto +
+                ", host=" + host.getNome() +
+                '}';
+    }
 }

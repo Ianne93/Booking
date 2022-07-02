@@ -43,4 +43,14 @@ public class Feedback {
     public void setPunteggio(int punteggio) {
         this.punteggio = punteggio;
     }
+
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "idFeedback=" + idFeedback +
+                ", titolo='" + titolo + '\'' +
+                ", testo='" + testo + '\'' +
+                ", punteggio=" + punteggio +
+                '}';
+    }
 }

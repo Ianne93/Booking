@@ -1,6 +1,9 @@
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Gestore {
 
@@ -53,7 +56,39 @@ public class Gestore {
     }
 
     public void addPrenotazione(Prenotazione prenotazione) {
-        listaTotPrenotazioni.add(prenotazione);
+        LocalDateTime dataInizioPrenotazione = prenotazione.getDataInizio();
+        LocalDateTime dataFinePrenotazione = prenotazione.getDataFine();
+        LocalDateTime dataInizioAbitazione;
+        LocalDateTime dataFineAbitazione;
+        boolean flag = false;
+
+        if(dataInizioPrenotazione.isAfter(prenotazione.getAbitazione().getDataInzio()) &&
+                dataFinePrenotazione.isBefore(prenotazione.getAbitazione().getDataFine()) )
+        {
+            if(prenotazione.getAbitazione().getListaPrenotazioni().size() == 0)
+            {
+                listaTotPrenotazioni.add(prenotazione);
+                prenotazione.getAbitazione().getListaPrenotazioni().add(prenotazione);
+                flag = true;
+            }
+            for(int i = 0; i < prenotazione.getAbitazione().getListaPrenotazioni().size(); i++)
+            {
+                dataInizioAbitazione = prenotazione.getAbitazione().getListaPrenotazioni().get(i).getDataInizio();
+                dataFineAbitazione = prenotazione.getAbitazione().getListaPrenotazioni().get(i).getDataFine();
+                if(dataFineAbitazione.isBefore(dataInizioPrenotazione) || dataInizioAbitazione.isAfter(dataFinePrenotazione))
+                {
+                    listaTotPrenotazioni.add(prenotazione);
+                    prenotazione.getAbitazione().getListaPrenotazioni().add(prenotazione);
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        if(!flag)
+        {
+            System.out.println("Data Prenotazione non disponiibile");
+        }
+
     }
 
     public ArrayList<Abitazione> abitazioniHost(int codiceId) {
@@ -127,14 +162,18 @@ public class Gestore {
         int count = 0;
         count = 0;
         for (Host host : listaHost) {
+            count = 0;
             for (Prenotazione prenotazione : listaTotPrenotazioni) {
                 if (prenotazione.getDataInizio().isAfter(LocalDateTime.now().minusMonths(1)) && prenotazione.getAbitazione().getHost().equals(host)) {
                     count++;
                 }
             }
             if (count > tmpMax) {
+                hostTemp2 = hostTemp;
+                tmpMax2 = count;
                 hostTemp = host;
                 tmpMax = count;
+
             } else if (count > tmpMax2) {
                 hostTemp2 = host;
                 tmpMax2 = count;
@@ -143,6 +182,34 @@ public class Gestore {
         System.out.println("I migliori Host sono : " + hostTemp + hostTemp2);
 
         //provare funzione hostMaggiore!!
+    }
+    // ottenere i 5 utenti con più giorni prenotati nell'ultimo mese
+    public void fiveUsers()
+    {
+        TreeMap<Integer, Utente> mapUsers = new TreeMap<>();
+        int count = 0;
+
+        for (Utente user : listaUtente) {
+            count = 0;
+            for (Prenotazione prenotazione : listaTotPrenotazioni) {
+                if (prenotazione.getDataInizio().isAfter(LocalDateTime.now().minusMonths(1)) && prenotazione.getUtente().equals(user)) {
+                    count += Period.between(prenotazione.getDataInizio().toLocalDate(), prenotazione.getDataFine().toLocalDate()).getDays();
+                }
+            }
+            mapUsers.put(count, user);
+        }
+        count = 0;
+        for (Map.Entry<Integer, Utente> entry: mapUsers.entrySet())
+        {
+            if(count > mapUsers.size()-6)
+            {
+                System.out.println(entry.getKey() +" - "+ entry.getValue());
+            }
+            count++;
+        }
+
+
+       // Period.between(aDate, sixtyDaysBehind);
     }
 }
 

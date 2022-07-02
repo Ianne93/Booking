@@ -64,4 +64,14 @@ public class Utente {
         prenotazione.getAbitazione().getHost().getIncrementNumPrenotazioni();
     }
 
+    @Override
+    public String toString() {
+        return "Utente{" +
+                "nome='" + nome + '\'' +
+//                ", cognome='" + cognome + '\'' +
+//                ", email='" + email + '\'' +
+//                ", indirizzo='" + indirizzo + '\'' +
+//                ", idUtente=" + idUtente +
+                '}';
+    }
 }
